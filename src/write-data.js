@@ -6,6 +6,8 @@ const dynamodb = new AWS.DynamoDB.DocumentClient({
   endpoint: new AWS.Endpoint('http://localhost:8000'),
   region: 'us-west-2',
   // what could you do to improve performance?
+  //Turning off request/response type conversion to dynamodb will improve performance
+  convertResponseTypes: false
 });
 
 const tableName = 'SchoolStudents';
